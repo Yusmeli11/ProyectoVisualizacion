@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Gran Transición Demográfica: Una Historia de Fertilidad Global</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/topojson@3"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section id="hero" class="section">
+        <div class="container">
+            <h1 class="hero-title">La Gran Transición Demográfica</h1>
+            <p class="hero-subtitle">Cómo el mundo cambió para siempre en menos de un siglo</p>
+            <p>Hecho Por Achundia Belinda y Zambramo Irving</p>
+            <div class="scroll-indicator">
+                <div class="scroll-arrow"></div>
+                <span>Desplázate para descubrir</span>
+            </div>
+        </div>
+        <div id="hero-viz" class="hero-visualization"></div>
+    </section>
+
+    <!-- Introduction -->
+    <section id="intro" class="section">
+        <div class="container">
+            <div class="narrative-text">
+                <h2>El Cambio Más Profundo de la Historia Humana</h2>
+                <p>En 1960, una mujer promedio en el mundo tenía <strong>5 hijos</strong>. Hoy, esa cifra ha caído a menos de <strong>2.3 hijos</strong>.</p>
+                <p>Esta transformación silenciosa está redefiniendo el futuro de la humanidad, alterando economías, sociedades y el equilibrio geopolítico mundial.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Trend -->
+    <section id="global-trend" class="section">
+        <div class="container">
+            <div class="narrative-text">
+                <h2>La Curva que Cambió el Mundo</h2>
+                <p>Desde 1960, la tasa de fertilidad global ha experimentado un descenso constante y dramático.</p>
+            </div>
+            <div id="global-chart" class="chart-container"></div>
+            <div class="narrative-text">
+                <p>Esta línea descendente representa una de las transformaciones sociales más significativas de la era moderna.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regional Comparison -->
+    <section id="regional" class="section">
+        <div class="container">
+            <div class="narrative-text">
+                <h2>Historias Diferentes, Destino Común</h2>
+                <p>Cada región del mundo ha seguido su propio camino hacia la transición demográfica.</p>
+            </div>
+            <div id="regional-chart" class="chart-container"></div>
+            <div class="controls">
+                <button class="country-btn active" data-country="all">Todos los Países</button>
+                <button class="country-btn" data-country="China">China</button>
+                <button class="country-btn" data-country="India">India</button>
+                <button class="country-btn" data-country="United States">Estados Unidos</button>
+                <button class="country-btn" data-country="Nigeria">Nigeria</button>
+                <button class="country-btn" data-country="Germany">Alemania</button>
+                <button class="country-btn" data-country="Japan">Japón</button>
+                <button class="country-btn" data-country="Brazil">Brasil</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current State Map -->
+    <section id="current-state" class="section">
+        <div class="container">
+            <div class="narrative-text">
+                <h2>El Mundo Hoy: Un Mosaico de Fertilidad</h2>
+                <p>Las diferencias actuales en las tasas de fertilidad revelan un mundo dividido entre el crecimiento y el declive poblacional.</p>
+            </div>
+            <div id="world-map" class="chart-container"></div>
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #d73027;"></div>
+                    <span>Muy Alta (>4)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #fc8d59;"></div>
+                    <span>Alta (3-4)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #fee08b;"></div>
+                    <span>Media (2-3)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #e0f3f8;"></div>
+                    <span>Baja (1-2)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #4575b4;"></div>
+                    <span>Muy Baja (<1)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Racing Chart -->
+    <section id="racing" class="section">
+        <div class="container">
+            <div class="narrative-text">
+                <h2>La Carrera Hacia el Cambio</h2>
+                <p>Observa cómo los países han evolucionado a través de las décadas.</p>
+            </div>
+            <div id="racing-chart" class="chart-container"></div>
+            <div class="controls">
+                <button id="play-btn" class="play-button">▶ Reproducir</button>
+                <div class="year-display">Año: <span id="current-year">1960</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scatter Plot Analysis -->
+    <section id="scatter-analysis" class="section">
+        <div class="container">
+            <div class="narrative-text">
+                <h2>Desarrollo vs Fertilidad: La Correlación Reveladora</h2>
+                <p>Existe una relación inversa clara entre el desarrollo económico y las tasas de fertilidad. Los países más desarrollados tienden a tener tasas de fertilidad más bajas.</p>
+        </div>
+        <div id="scatter-chart" class="chart-container"></div>
+        <div class="narrative-text">
+            <p>Esta correlación sugiere que el desarrollo económico, la educación y la urbanización son factores clave en la transición demográfica.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Generational Impact -->
+<section id="generational" class="section">
+    <div class="container">
+        <div class="narrative-text">
+            <h2>El Impacto Generacional: Pirámides en Transformación</h2>
+            <p>La estructura poblacional está cambiando dramáticamente. Observa cómo las pirámides poblacionales se han invertido en muchos países desarrollados.</p>
+        </div>
+        <div id="generational-chart" class="chart-container"></div>
+        <div class="controls">
+            <button class="generation-btn active" data-type="traditional">Pirámide Tradicional</button>
+            <button class="generation-btn" data-type="transitional">En Transición</button>
+            <button class="generation-btn" data-type="inverted">Pirámide Invertida</button>
+        </div>
+    </div>
+</section>
+
+    <!-- Implications -->
+    <section id="implications" class="section">
+        <div class="container">
+            <div class="narrative-text">
+                <h2>Las Consecuencias de la Transición</h2>
+                <div class="implications-grid">
+                    <div class="implication-card">
+                        <h3>🏢 Economía</h3>
+                        <p>Envejecimiento poblacional, cambios en la fuerza laboral y sistemas de pensiones bajo presión.</p>
+                    </div>
+                    <div class="implication-card">
+                        <h3>🌍 Geopolítica</h3>
+                        <p>Redistribución del poder global basada en demografía y crecimiento económico.</p>
+                    </div>
+                    <div class="implication-card">
+                        <h3>🏥 Sociedad</h3>
+                        <p>Nuevos modelos familiares, urbanización acelerada y cambios culturales profundos.</p>
+                    </div>
+                    <div class="implication-card">
+                        <h3>🔮 Futuro</h3>
+                        <p>Proyecciones indican estabilización poblacional global hacia 2100.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion -->
+    <section id="conclusion" class="section">
+        <div class="container">
+            <div class="narrative-text">
+                <h2>El Nuevo Equilibrio</h2>
+                <p>La gran transición demográfica no es solo una estadística: es la historia de cómo la humanidad aprendió a prosperar con menos, pero mejor.</p>
+                <p>Mientras algunos países enfrentan el desafío del envejecimiento, otros aún navegan hacia la estabilidad poblacional. El futuro dependerá de cómo adaptemos nuestras sociedades a esta nueva realidad demográfica.</p>
+                <div class="conclusion-stats">
+                    <div class="stat">
+                        <div class="stat-number">2.3</div>
+                        <div class="stat-label">Tasa de fertilidad global actual</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">2.1</div>
+                        <div class="stat-label">Tasa de reemplazo poblacional</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">11B</div>
+                        <div class="stat-label">Población máxima proyectada</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
